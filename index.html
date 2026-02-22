@@ -69,7 +69,7 @@
 
         h1 { font-family: 'Playfair Display', serif; font-size: 28px; color: var(--royal-blue); margin-bottom: 20px; text-align: center; letter-spacing: -0.5px; }
 
-        /* --- GLOWING WARNING BOX --- */
+        /* --- GLOWING WARNING BOX (FIXED ALIGNMENT & CAPS) --- */
         .strict-warning {
             background: var(--danger-bg);
             border: 1px solid rgba(255, 59, 48, 0.3);
@@ -91,9 +91,11 @@
         }
         .strict-warning span {
             font-size: 12px; 
-            font-weight: 600; 
+            font-weight: 700; /* Made slightly bolder for caps */
             color: #b71c1c; 
             line-height: 1.5;
+            text-transform: uppercase; /* Converts text to CAPS */
+            letter-spacing: 0.5px;
         }
         @keyframes pulseWarning {
             0% { box-shadow: 0 4px 15px rgba(255, 59, 48, 0.05); border-color: rgba(255, 59, 48, 0.2); }
@@ -112,45 +114,57 @@
         /* --- PROFILE NAME FONT --- */
         .profile-name {
             font-family: 'Playfair Display', serif;
-            font-size: 22px;
+            font-size: 20px; /* Slightly adjusted to fit longer name */
             font-weight: 700;
             color: var(--royal-blue);
             text-align: center;
+            margin-bottom: 10px;
+            letter-spacing: 0.5px;
+        }
+
+        /* --- SOCIAL LINKS --- */
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
             margin-bottom: 25px;
-            letter-spacing: 1px;
+        }
+        .social-icon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background: #fff;
+            color: var(--royal-blue);
+            font-size: 18px;
+            text-decoration: none;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+            transition: all 0.2s ease;
+            border: 1px solid #e5e5ea;
+        }
+        .social-icon:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 15px rgba(0,0,0,0.12);
+            color: white;
+            background: var(--royal-blue);
+            border-color: var(--royal-blue);
         }
 
         /* --- SLEEK INPUTS --- */
         .input-group { margin-bottom: 16px; position: relative; }
         .input-icon { 
-            position: absolute; 
-            left: 16px; 
-            top: 50%; 
-            transform: translateY(-50%); 
-            font-size: 18px; 
-            color: var(--text-muted); 
-            pointer-events: none; 
+            position: absolute; left: 16px; top: 50%; transform: translateY(-50%); 
+            font-size: 18px; color: var(--text-muted); pointer-events: none; 
         }
         .custom-input {
-            width: 100%; 
-            padding: 16px 16px 16px 46px; 
-            background: var(--input-bg); 
-            border: 1.5px solid transparent;
-            border-radius: 16px; 
-            font-size: 14px; 
-            color: var(--text-main); 
-            outline: none; 
-            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+            width: 100%; padding: 16px 16px 16px 46px; background: var(--input-bg); border: 1.5px solid transparent;
+            border-radius: 16px; font-size: 14px; color: var(--text-main); outline: none; transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
         }
         .custom-input:focus { background: #fff; border-color: var(--royal-blue); box-shadow: var(--focus-shadow); }
         .custom-input::placeholder { color: #a1a1a6; }
-        
-        textarea.custom-input { 
-            padding: 16px; 
-            resize: none; 
-            height: 90px; 
-            line-height: 1.5;
-        }
+        textarea.custom-input { padding: 16px; resize: none; height: 90px; line-height: 1.5; }
 
         /* --- SMART CHIPS (REASON) --- */
         .chips-container { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 15px; }
@@ -189,7 +203,7 @@
             box-shadow: 0 6px 15px rgba(0,35,102,0.1);
         }
 
-        /* --- STICKY BOTTOM BUTTON (FADE EFFECT) --- */
+        /* --- STICKY BOTTOM BUTTON --- */
         .bottom-bar { 
             position: absolute; bottom: 0; left: 0; right: 0; z-index: 20; opacity: 0; 
             padding: 15px 24px 24px 24px;
@@ -227,14 +241,26 @@
 
             <div class="strict-warning reveal">
                 <i class="ph-fill ph-warning-circle"></i>
-                <span>Sirf behad zaruri (Urgent) kaam ke liye book karein. Bina wajah pareshan karne par sakht action liya jayega.</span>
+                <span>SIRF BEHAD ZARURI (URGENT) KAAM KE LIYE BOOK KAREIN.</span>
             </div>
 
             <div class="middle-img-container">
                 <img src="2mufti.png" alt="Profile" class="middle-img">
             </div>
             
-            <h2 class="profile-name reveal">SHABAZ KHAN</h2>
+            <h2 class="profile-name reveal">MUFTI MOHAMMAD SHAHBAZ KHAN</h2>
+
+            <div class="social-links reveal">
+                <a href="https://www.youtube.com/@safardeenofficial" target="_blank" class="social-icon" title="YouTube">
+                    <i class="ph-fill ph-youtube-logo"></i>
+                </a>
+                <a href="https://www.facebook.com/profile.php?id=61582661054534" target="_blank" class="social-icon" title="Facebook">
+                    <i class="ph-fill ph-facebook-logo"></i>
+                </a>
+                <a href="https://www.instagram.com/mufti_shahbaz" target="_blank" class="social-icon" title="Instagram">
+                    <i class="ph-fill ph-instagram-logo"></i>
+                </a>
+            </div>
 
             <div class="input-group reveal">
                 <i class="ph-fill ph-user input-icon"></i>
@@ -253,7 +279,7 @@
                 <label class="section-label">Reason for Appointment</label>
                 <div class="chips-container">
                     <div class="chip" onclick="selectReason(this, 'Namaz')">Namaz</div>
-                    <div class="chip" onclick="selectReason(this, 'Roja')">Roja</div>
+                    <div class="chip" onclick="selectReason(this, 'Roza')">Roza</div>
                     <div class="chip" onclick="selectReason(this, 'Hajj')">Hajj</div>
                     <div class="chip" onclick="selectReason(this, 'Zakat')">Zakat</div>
                     <div class="chip" onclick="selectReason(this, 'Others')">Others</div>
